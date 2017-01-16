@@ -20,7 +20,7 @@ let bodyParser = require('body-parser');
 let app = express();
 app.use(bodyParser.json({type: 'application/json'}));
 
-const CLIENT_CODE_ACTION = 'client_name';
+const CLIENT_CODE_ACTION = 'get_client_code';
 const FOOLISH_PIZZA = 'foolish_pizza';
 const NAME_ACTION = 'make_name';
 const CLIENT_NAME_ARGUMENT = 'clientname';
