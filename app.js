@@ -49,7 +49,7 @@ app.post('/', function (req, res) {
   }
   
   function foolishPizza (assistant) {
-	assistant.tell ('We don''t sell any pizza here!');
+	assistant.tell ('We dont sell any pizza here!');
   }
 
   let actionMap = new Map();
