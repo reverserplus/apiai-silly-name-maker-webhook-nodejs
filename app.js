@@ -37,6 +37,9 @@ app.post('/', function (req, res) {
 	if (color === 'blue'){
 		assistant.tell('That color sucks!');
 	}
+	else if (color === 'pink'){
+		assistant.tell('What a girly color choice!');
+	}
 	else{
 		assistant.tell('Alright, your silly bunny name is ' +
 		color + ' ' + number +
