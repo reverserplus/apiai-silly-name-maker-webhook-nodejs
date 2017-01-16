@@ -56,7 +56,7 @@ app.post('/', function (req, res) {
 
   function getClientCode (assistant) {
 	let name = assistant.getArgument(CLIENT_NAME_ARGUMENT);
-	assistant.tell ('Sorry, I dont know any' + name + 'client codes');
+	assistant.tell ('Sorry, I dont know any ' + name + ' client codes');
   }
   
   let actionMap = new Map();
