@@ -20,6 +20,7 @@ let bodyParser = require('body-parser');
 let app = express();
 app.use(bodyParser.json({type: 'application/json'}));
 
+const FOOLISH_PIZZA = 'foolish_pizza';
 const NAME_ACTION = 'make_name';
 const COLOR_ARGUMENT = 'color';
 const NUMBER_ARGUMENT = 'number';
@@ -46,9 +47,14 @@ app.post('/', function (req, res) {
       '! I hope you like it. See you next time.');
 	}
   }
+  
+  function foolishPizza (assistant) {
+	assistant.tell ('We do not sell any pizza here');
+  }
 
   let actionMap = new Map();
   actionMap.set(NAME_ACTION, makeName);
+  actionMap.set(FOOLISH_PIZZA, foolishPizza);
 
   assistant.handleRequest(actionMap);
 });
