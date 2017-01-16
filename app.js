@@ -20,8 +20,10 @@ let bodyParser = require('body-parser');
 let app = express();
 app.use(bodyParser.json({type: 'application/json'}));
 
+const CLIENT_CODE_ACTION = 'client_name';
 const FOOLISH_PIZZA = 'foolish_pizza';
 const NAME_ACTION = 'make_name';
+const CLIENT_NAME_ARGUMENT = 'clientname';
 const COLOR_ARGUMENT = 'color';
 const NUMBER_ARGUMENT = 'number';
 
@@ -52,10 +54,15 @@ app.post('/', function (req, res) {
 	assistant.tell ('We dont sell any pizza here!');
   }
 
+  function getGlientCode (assistant) {
+	let name = assistant.getArgument(CLIENT_NAME_ARGUMENT);
+	assistant.tell ('Sorry, I dont know any' + name + 'client codes');
+  }
+  
   let actionMap = new Map();
   actionMap.set(NAME_ACTION, makeName);
   actionMap.set(FOOLISH_PIZZA, foolishPizza);
-
+  actionMap.set(CLIENT_CODE_ACTION, getClientCode);
   assistant.handleRequest(actionMap);
 });
 // [END SillyNameMaker]
