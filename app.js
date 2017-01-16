@@ -54,7 +54,7 @@ app.post('/', function (req, res) {
 	assistant.tell ('We dont sell any pizza here!');
   }
 
-  function getGlientCode (assistant) {
+  function getClientCode (assistant) {
 	let name = assistant.getArgument(CLIENT_NAME_ARGUMENT);
 	assistant.tell ('Sorry, I dont know any' + name + 'client codes');
   }
