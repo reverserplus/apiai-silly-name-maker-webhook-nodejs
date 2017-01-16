@@ -35,7 +35,7 @@ app.post('/', function (req, res) {
   function makeName (assistant) {
     let number = assistant.getArgument(NUMBER_ARGUMENT);
     let color = assistant.getArgument(COLOR_ARGUMENT);
-    assistant.tell('Alright, your silly name is ' +
+    assistant.tell('Alright, your silly bunny name is ' +
       color + ' ' + number +
       '! I hope you like it. See you next time.');
   }
