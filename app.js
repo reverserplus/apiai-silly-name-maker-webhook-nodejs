@@ -17,7 +17,6 @@ process.env.DEBUG = 'actions-on-google:*';
 let Assistant = require('actions-on-google').ApiAiAssistant;
 let express = require('express');
 let bodyParser = require('body-parser');
-
 let app = express();
 app.use(bodyParser.json({type: 'application/json'}));
 
@@ -35,9 +34,14 @@ app.post('/', function (req, res) {
   function makeName (assistant) {
     let number = assistant.getArgument(NUMBER_ARGUMENT);
     let color = assistant.getArgument(COLOR_ARGUMENT);
-    assistant.tell('Alright, your silly bunny name is ' +
-      color + ' ' + number +
+	if (color === 'blue'){
+		assistant.tell('That color sucks!');
+	}
+	else{
+		assistant.tell('Alright, your silly bunny name is ' +
+		color + ' ' + number +
       '! I hope you like it. See you next time.');
+	}
   }
 
   let actionMap = new Map();
