@@ -57,7 +57,7 @@ app.post('/', function (req, res) {
   function getClientCode (assistant) {
 	let name = assistant.getArgument(CLIENT_NAME_ARGUMENT);
 	if (name === 'CRS'){
-		assistant.tell('The CRS services code is 1 2 5 0 0 0 3');
+		assistant.tell('The CRS services code is 1 2 5 0 0 0 2 3');
 	}
 	else{
 	assistant.tell ('Sorry, I dont know any ' + name + ' client codes');
